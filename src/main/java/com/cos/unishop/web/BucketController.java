@@ -53,39 +53,73 @@ public class BucketController {
 		// 고객이 상품을 조금이라도 넣었을 때
 		
 		// 만약 고객이 선택한 것 중에 같은 것이 있으면
-		// num의 값을 높여서 save 하지 않도록 넘긴다.
+		// num의 값을 높여서 save 하지 않도록 넘긴다.(구버전 0806)
+		
+		// 곂치는 것이 있으면 num값이 올라간다.
+		// 그렇지 않으면 DB에 저장해주자.
 		int num = 0;
 		for(int i=0; i< size ; i++) {
+			
+			
 			if(UserChoiceProductName.equals(bucketEntityProNameList.get(i))) {
 				System.out.println(UserChoiceProductName+" : 유저가 선택한 이름이에요!");
 				System.out.println(bucketEntityProNameList.get(i)+"for문안의 이름 값이에요!"+ "인덱스번호: "+i);
 				num ++;
-				if(i==size-1) {
-					return "no";	
-				}
-				
+				System.out.println(num);
 			} 
 		}
+		// num의 값은 결국 곂치는 이름의 수를 의미하는데 (0807)
+		// 그러나 이거 size가 모든 크기이기 때문에
+		// size-num 이 곂치지 않는 숫자 인것.
+		// 결국은 size-num 이 1 이거나 (하나가 곂치지 않음)
+		// 아니면 size-num 이 0 이다 (전부다 곂침)
+		// 여기서 곂치지 않는 다는 건 다른 값이 들어왔다는 것!!
+		// 그러면 저장을 해줘야한다!
 		
-		// for문 다돌고나면
-		// num의 값을 선택하여 save할지 유무를 정한다
+		// 즉 num은 기존값과 같은지 같지 않은지 여부를 판단하게 해준다!
 		
-		if(num != 0) {
-			// 없으면 버킷에 저장한다
+		
+		// 아니다
+		// num은 리스트에서 꺼내서 같을 때만 숫자를 더하게 된다.
+		// 보통은 1 아니면 0 인것이다.
+		// 왜냐하면 곂치는 경우에도 한번만 곂치기 때문이다.
+		// 곂치지 않으면 그 때 그 값을 저장 시켜주면 된다.
+		// num이 1이라는건 하나가 곂쳤다는 것이다.
+		// 그러면 no를 해주자
+		// num이 0이라는 건 없다는 것이다.
+		// 그러면 ok를 해주자
+		
+		
+		if(num==1) {
+			
+			return "no";
+		} else if(num==0) {
 			
 			bucket.setUser(principal);
 			bucketProductsRepository.save(bucket);
 			System.out.println("나 때려짐? input PostMapping");
+			return "ok";	
+		} else {
+			// 이외의 모든 것 
+			// 그냥 보내주자
 			return "ok";
 		}
 		
+		// for문 다돌고나면
+		// num의 값을 선택하여 save할지 유무를 정한다
+		// num이 값이 있으면 버킷에 있는 것! 저장하지 않는다!
 		
-		// 고객이 상품을 아예 안넣었을 때
+		// 고객이 상품을 아예 안넣었을 때도 여기에 포함
+		
+		
+		
+		
+		
 		// 없으면 버킷에 저장한다
-		bucket.setUser(principal);
-		bucketProductsRepository.save(bucket);
-		System.out.println("나 때려짐? input PostMapping");
-		return "ok";
+//		bucket.setUser(principal);
+//		bucketProductsRepository.save(bucket);
+//		System.out.println("나 때려짐? input PostMapping");
+//		return "no";
 		
 		
 

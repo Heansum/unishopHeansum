@@ -1,6 +1,8 @@
 package com.cos.unishop.web;
 
+import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
@@ -69,7 +71,7 @@ public class AdminController {
 			
 			postRepository.save(post);
 			
-		}catch(Exception e) {
+		}catch(IOException e) {
 			e.printStackTrace();
 		}
 		

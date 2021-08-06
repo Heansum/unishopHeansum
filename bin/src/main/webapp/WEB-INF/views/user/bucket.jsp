@@ -133,6 +133,8 @@
 						</tr>
 					</thead>
 					<tbody>
+					
+						<c:forEach var="bucketProduct" items="${bucketProductsEntity}">
 						<!-- 한줄 시작 -->
 						<tr>
 							<!-- th, for문으로 돌립니다 -->
@@ -142,7 +144,7 @@
 								<div class="info-align-box">
 									<div class="form-check">
 										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
+											id="${bucketProduct.id}"> <label
 											class="form-check-label" for="flexCheckDefault"> </label>
 									</div>
 								</div>
@@ -157,20 +159,20 @@
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
+											src="${bucketProduct.image}"
 											class="rounded float" alt="...">
 									</div>
 
 									<!-- 제품 이름 -->
 									<div class="product-inforamtion" style="font-weight: 800;">
-										white skirts</div>
+										${bucketProduct.productname}</div>
 
 									<!-- 사이즈 추가 -->
 									<!-- 사이즈 컴포넌트 추가 -->
 									<div class="product-size">
 										size
 										<!-- 여기에 사이즈 EL 표현식 -->
-										<input class="num-wrap" value="M" readonly>
+										<input class="num-wrap" value="${bucketProduct.size}" readonly>
 									</div>
 									<!-- 상품 페이지 버튼 -->
 									<!-- 여기에 DB연동해서 상품 페이지 정보를 받아서 바로 갈 수 있게 합니다 -->
@@ -189,7 +191,7 @@
 								<td>
 									<div class="info-align-box">
 										<!-- 여기에 EL표현식으로 가격을 받아옵니다 -->
-										23.99$
+										${bucketProduct.price}
 									</div>
 								</td>
 								<!-- 수량 -->
@@ -230,6 +232,7 @@
 							</div>
 						</tr>
 						<!-- 한줄 종료 -->
+						</c:forEach>
 
 
 

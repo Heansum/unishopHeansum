@@ -159,7 +159,7 @@
 									<div class="minibox-img">
 										<!-- 이미지 -->
 										<img id="img1"
-											src="${bucketProduct.image}"
+											src="/upload/${bucketProduct.image}"
 											class="rounded float" alt="...">
 									</div>
 

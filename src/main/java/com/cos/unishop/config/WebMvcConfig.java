@@ -1,11 +1,13 @@
 package com.cos.unishop.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 
 import com.cos.unishop.utils.MyPath;
 
+@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Override

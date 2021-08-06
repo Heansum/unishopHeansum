@@ -23,4 +23,4 @@ spring:
     hibernate:
       ddl-auto: none #create:, update, none
     show-sql: true
-
+    open-in-view: true
