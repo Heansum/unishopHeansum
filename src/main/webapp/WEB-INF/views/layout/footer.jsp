@@ -111,6 +111,16 @@ function goPaymentAPI(){
     				return ;
     			}
     		}
+    		
+    		if(parseResponse === "no") {
+    			
+    			if(confirm("선택한 상품이 장바구니에 담겼습니다, 장바구니로 가시겠습니까?")== true) {
+    				location.href = "/bucket/${principal.id}";
+    				
+    			} else {
+    				return ;
+    			}
+    		}
 			
 			
 			
