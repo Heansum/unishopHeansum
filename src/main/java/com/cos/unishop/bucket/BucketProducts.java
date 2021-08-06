@@ -28,7 +28,7 @@ public class BucketProducts {
 	private int id;
 	
 	@JoinColumn(name = "user_id")
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	private User user; 
 	
 

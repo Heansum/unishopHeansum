@@ -45,7 +45,7 @@
 <!--                 <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="goBucket()" >bucket</button> -->
 <!--               </div> -->
                  <div class="button-wrap">
-	               <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="inputBucket('${postEntity.id}','${postEntity.productname}','${postEntity.image}','${postEntity.size}','${postEntity.price}')">Input bucket</button>
+	               <button class="w-100 btn btn-lg btn-primary" type="submit" style="background-color: #f5f5f5; border:  #f8f9fa; color: #383838;" onclick="inputBucket('${postEntity.productname}','${postEntity.image}','${postEntity.size}','${postEntity.price}')">Input bucket</button>
               </div>
             </div>
             </c:otherwise>

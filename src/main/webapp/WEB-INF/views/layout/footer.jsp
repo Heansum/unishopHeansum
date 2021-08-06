@@ -78,13 +78,12 @@ function goPaymentAPI(){
 			location.href = "/bucket/${principal.id}";
 		}
 		
-		async function inputBucket(id,productname,image,size,price) {
+		async function inputBucket(productname,image,size,price) {
 			
 			console.log("나실행됨?");
 			event.preventDefault();
 			
 			let postDto = {
-					id: id,
 					productname: productname,
 					image: image,
 					size: size,

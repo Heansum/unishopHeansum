@@ -36,8 +36,11 @@ public class BucketController {
 	@PostMapping("/bucket")
 	public @ResponseBody String input(@RequestBody BucketProducts bucket) {
 		
-		
 		User principal = (User) session.getAttribute("principal");
+		
+		System.out.println(bucket.getProductname());
+		System.out.println(principal.getId());
+		System.out.println(bucketProductsRepository.mFindByUserId(principal.getId()));
 		
 		bucket.setUser(principal);
 		bucketProductsRepository.save(bucket);
