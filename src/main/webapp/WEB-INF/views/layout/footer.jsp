@@ -124,9 +124,52 @@ function goPaymentAPI(){
 			
 			
 			
-			
-			
 		}
+		
+		// 체크박스 잡고 돌리기
+		// 장바구니에서 구매로 가는 함수 입니다.
+// 		function buy() {
+// 			// 체크 박스 전체 겟수
+// 			$('input:checkbox[name="id"]').length
+
+			//체크된 박스 겟수
+// 			$('input:checkbox[name="id"]:checked').length
+
+// 			$('input:checkbox[name="id"]').each (function(){
+// 				if(this.checked){
+
+// 					// 체크 된 것들 each로 각각의 value 값을 던져주게 만든다
+// 		            alert(this.value); 
+// 					let id = this.value;
+// 					// fetch로 value에 담으면 될듯!
+// 					let postDto = {
+// 							id: id
+// 					};
+					
+// 					let response = await fetch("/bucket/buy/"+this.value, {
+// 						method: "post",
+// 						body: JSON.stringify(postDto),
+// 						headers: {
+// 							"Content-Type": "application/json;charset=utf-8"
+// 						}
+// 					});
+					
+// 					let parseResponse = await response.text();
+// 					if(parseResponse === "ok"){
+// 						console.log("구매로 저장되었습니다");
+// 						location.href = "/bucket/${principal.id}";
+// 					}
+					
+// 		      }
+				
+// 			});
+			
+// 		}
+		
+		
+		
+		
+		
 
 		function logout() {
 			alert("ë¡ê·¸ììíìê² ìµëê¹Â?");

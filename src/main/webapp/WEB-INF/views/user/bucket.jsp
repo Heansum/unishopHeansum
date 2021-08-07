@@ -143,8 +143,8 @@
 								<!-- 체크박스 -->
 								<div class="info-align-box">
 									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="${bucketProduct.id}"> <label
+										<input class="form-check-input" type="checkbox" name="id" value="${bucketProduct.id}"
+											id="${bucketProduct.id}" checked> <label
 											class="form-check-label" for="flexCheckDefault"> </label>
 									</div>
 								</div>
@@ -433,73 +433,6 @@
 
 
 
-						<!-- 구버전 -->
-						<!-- 한줄 시작 -->
-						<tr>
-							<!-- th, for문으로 돌립니다 -->
-							<!-- 나중에 여기에 EL 표현식으로 뿌려줍니다 -->
-							<th scope="row">
-								<!-- 체크박스 -->
-								<div class="info-align-box">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value=""
-											id="flexCheckDefault"> <label
-											class="form-check-label" for="flexCheckDefault"> </label>
-									</div>
-								</div>
-							</th>
-
-
-
-							<!-- 상품정보 -->
-							<!-- 여기에서 상품 이름을 클릭하면 그 상품에 해당하는 detail을 뿌리는 기능 추가 -->
-							<td>
-								<div class="product-info-box">
-									<div class="minibox-img">
-										<!-- 이미지 -->
-										<img id="img1"
-											src="https://images.unsplash.com/photo-1590400516695-36708d3f964a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
-											class="rounded float" alt="...">
-									</div>
-
-									<!-- 제품 이름 -->
-									<div class="product-inforamtion" style="font-weight: 800;">
-										white skirts</div>
-
-									<!-- 사이즈 추가 -->
-									<!-- 사이즈 컴포넌트 추가 -->
-									<div class="product-size">size</div>
-								</div>
-
-							</td>
-
-
-
-							<div class="info-align">
-								<!-- 가격 -->
-								<td>
-									<div class="info-align-box">23.99$</div>
-								</td>
-								<!-- 수량 -->
-								<!-- 수량 컴포넌트 추가 -->
-								<td>
-									<div class="info-align-box">2</div>
-								</td>
-								<!-- 합계 -->
-								<!-- 계산되어서 되는 합계 추가 -->
-								<td>
-									<div class="info-align-box">47.98$</div>
-								</td>
-								<td>
-									<div class="info-align-box">
-										<button type="button" class="btn btn-danger">삭제</button>
-									</div>
-								</td>
-
-							</div>
-						</tr>
-						<!-- 한줄 종료 -->
-
 					</tbody>
 				</table>
 
@@ -516,6 +449,7 @@
 							</label>
 						</div>
 						<button type="button" class="btn btn-danger">삭제</button>
+						<button type="button" class="btn btn-success" onclick="buy(${bucketProductEntity.id})">구매</button>
 					</div>
 
 				</div>
@@ -558,5 +492,5 @@
 
 
 </main>
-
+<script src="/js/Bucket.js"></script>
 <%@ include file="../layout/footer.jsp"%>
